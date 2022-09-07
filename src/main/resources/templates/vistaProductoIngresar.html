@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="https://.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	
+</head>
+
+
+<body>
+
+	<form th:action="@{/productos/insertar}" th:object="${producto}" th:method = "POST">
+		<table>
+			<tr>
+				<td> <label> Nombre:</label> </td>
+				<td> <input type="text" id="nombre" th:field="${producto.nombre}"> </td>
+			</tr>
+			<tr>
+				<td>  <label> Codigo de barras :</label></td>
+				<td> <input type="text" id="apellido" th:field="${producto.apellido}"> </td>
+			</tr>
+			<tr>
+				<td>  <label> categoria:</label></td>
+				<td> <input type="text" id="cedu" th:field="${producto.cedula}"> </td>
+			</tr>
+			<tr>
+				<td>  <label> stock:</label></td>
+				<td> <input type="text" id="genero" th:field="${producto.stock}"> </td>
+			</tr>
+			<tr>
+				<td>  <label> precio:</label></td>
+				<td> <input type="text" id="genero" th:field="${producto.precio}"> </td>
+			</tr>
+
+		</table>
+		<input type="submit" value="Guardar">
+	</form>
+</body>
+
+</html>

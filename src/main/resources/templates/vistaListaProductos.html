@@ -1,0 +1,43 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table class="table table-dark table-sm">
+        <thead>
+            <tr>
+                <th>codigo de Barras</th>
+                <th>Nombre</th>
+                <th>Categoría</th>
+                <th>Stock</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="producto:${productos}">
+                <td th:text="${producto.productos}"></td>
+                <td th:text="${producto.productos}"></td>
+                <td th:text="${producto.productos}"></td>
+                <td th:text="${producto.productos}"></td>
+                <td th:text="${producto.productos}"></td>
+                <td>
+                    <form action="#" th:action="@{/productos/buscarUno/{id}(id=${producto.id})}" th:object="${producto}"
+                        th:method="GET">
+                        <input type="submit" value="Editar">
+                    </form>
+                </td>
+                <td>
+                    <form action="#" th:action="@{/productos/borrar/{id}(id=${producto.id})}" th:object="${producto}"
+                        th:method="DELETE">
+                        <input type="submit" value="Borrar">
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
